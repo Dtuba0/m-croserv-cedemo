@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8097/eureka  # !!! eureka nin adresini yaziyoruz
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/logdb
+      #default db verdiğim için username ve pass yazmaya gerek yok

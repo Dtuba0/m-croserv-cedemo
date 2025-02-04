@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8097/eureka  # !!! eureka nin adresini yaziyoruz
+
+spring:
+  cloud:
+    gateway:
+      routes: # !!! yonlendirme kurallarini belirleyecegimi soyluyorum
+        - id: carModule
+          uri: lb://car-service # lb= load balancer --> yuk dagilimi ( yedek server'a yonlendirebilir )
+          predicates:
+            - Path=/car/** # !!! sadece /car/** yol önekine sahip istekler Car servisine yönlendirilecektir
+
+        - id: logModule
+          uri: lb://log-service
+          predicates:
+            - Path=/log/**

@@ -1,0 +1,22 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;
+    driverClassName : org.h2.Driver;
+    username: sa # !!! admin , techpro , user
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    datebase-platform: org.hibernate.dialect.H2Dialect;
+  h2:
+    console:
+      enabled: true
+
+
+
+    eureka:
+      client:
+        serviceUrl:
+      defaultZone: http://localhost:8097/eureka  # !!! eureka nin adresini yaziyoruz
